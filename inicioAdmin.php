@@ -33,7 +33,9 @@
         <div class=container>
         	<button type="submit" class="btn btn-dark"><a href="atualizarSemana.php">Atualizar Cardápio da Semana</button>
         </div>
-		
+		<hr>
+		<a href="index.php"><button type="submit" class="bt btn-primary">Voltar à tela principal</button></a>
+		<hr>
 	</div>
 	
 </body>
