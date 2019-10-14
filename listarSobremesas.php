@@ -10,28 +10,28 @@ include_once("conexao.php");
 
 <html>
 <head>
-  <title>Lista de Bebidas</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
+	<title>Lista de Sobremesas</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
   <link rel="stylesheet" href="css/styleIndex.css">
 
 
-  
+	
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--para funcionalidades de botões e menu-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><!--para estilização online-->
 </head>
 
 
 <body style="background-color: #d3222a; color: #ffc82d;">
-  <div class="container" style="width: 500px; margin-top: 50px;">
+	<div class="container" style="width: 500px; margin-top: 50px;">
     <a href="inicioAdmin.php"><button type="submit" class="bt btn-primary"style="float:right;">Voltar</button></a>
 
-    <h3>Lista de Bebidas</h3>
+		<h3>Lista de Sobremesas</h3>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Nro Bebida</th>
-          <th scope="col">Nome da Bebida</th>
+          <th scope="col">Nro Sobremesa</th>
+          <th scope="col">Nome da Sobremesa</th>
           <th scope="col">Descrição</th>
         </tr>
       </thead>
@@ -43,20 +43,20 @@ include_once("conexao.php");
           unset($_SESSION['msg']);
         }
 
-        $result_usuarios = "SELECT * FROM bebida";
+        $result_usuarios = "SELECT * FROM sobremesa";
         $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 
-        while ($row_bebida = mysqli_fetch_assoc($resultado_usuarios)){
+        while ($row_sobremesa = mysqli_fetch_assoc($resultado_usuarios)){
 
 
         ?>
 
           <tr>
-            <td><?php echo $row_bebida['nro_bebida'];?></td>
-            <td><?php echo $row_bebida['nome_bebida'];?></td>
-            <td><?php echo $row_bebida['descricao'];?></td>
-            <td><a href="editarBebida.php?id_bebida=<?php echo $row_bebida['id_bebida'];?>" class="btn btn-warning" role="button">Editar</a></td>
-            <td><a href="proc_excluirBebida.php?id_bebida=<?php echo $row_bebida['id_bebida'];?>" class="btn btn-warning" role="button">Excluir</a></td>
+            <td><?php echo $row_sobremesa['nro_sobremesa'];?></td>
+            <td><?php echo $row_sobremesa['nome_sobremesa'];?></td>
+            <td><?php echo $row_sobremesa['descricao'];?></td>
+            <td><a href="editarSobremesa.php?id_sobremesa=<?php echo $row_sobremesa['id_sobremesa'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirSobremesa.php?id_sobremesa=<?php echo $row_sobremesa['id_sobremesa'];?>" class="btn btn-warning" role="button">Excluir</a></td>
           </tr>
         </tr>
 

@@ -21,13 +21,13 @@
         <div class="menu-bar">
 			<ul>Bebidas
                	<li><a href="listarBebidas.php">Editar Bebidas</a></li>
-               	<li><a href="#">Inserir Nova Bebida</a></li>
+               	<li><a href="cadastroBebida.php">Inserir Nova Bebida</a></li>
 	        </ul>
         </div>
         <div class="menu-bar">
 			<ul>Sobremesas
-               	<li><a href="#">Editar Sobremesas</a></li>
-               	<li><a href="#">Inserir Nova Sobremesa</a></li>
+               	<li><a href="listarSobremesas.php">Editar Sobremesas</a></li>
+               	<li><a href="cadastroSobremesa.php">Inserir Nova Sobremesa</a></li>
 	        </ul>
         </div>
         <div class=container>
