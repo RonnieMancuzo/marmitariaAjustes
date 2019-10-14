@@ -26,7 +26,7 @@ session_start();
 		}
 
 		?>
-		<form action="inserirPrato.php" method="POST">
+		<form action="proc_cadastroPrato.php" method="POST">
 			<fieldset class="border p-2">
 				<legend  class="w-auto">Prato</legend>
 				<div class="form-group">

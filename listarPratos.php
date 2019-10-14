@@ -20,8 +20,12 @@ include_once("conexao.php");
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--para funcionalidades de botões e menu-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><!--para estilização online-->
 </head>
+
+
 <body style="background-color: #d3222a; color: #ffc82d;">
 	<div class="container" style="width: 500px; margin-top: 50px;">
+    <a href="inicioAdmin.php"><button type="submit" class="bt btn-primary"style="float:right;">Voltar</button></a>
+
 		<h3>Lista de Pratos</h3>
     <table class="table">
       <thead>
@@ -51,8 +55,8 @@ include_once("conexao.php");
             <td><?php echo $row_prato['nro_prato'];?></td>
             <td><?php echo $row_prato['nome_prato'];?></td>
             <td><?php echo $row_prato['descricao'];?></td>
-            <td><a href="editarPrato.php?id=<?php echo $id_prato ?>" class="btn btn-warning" role="button">Editar</a></td>
-            <td><a href="#" class="btn btn-warning" role="button">Excluir</a></td>
+            <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
           </tr>
         </tr>
 
@@ -60,8 +64,7 @@ include_once("conexao.php");
       <hr>
     </table>
     <hr>
-    <a href="inicioAdmin.php"><button type="submit" class="bt btn-primary">Voltar ao menu principal</button></a>
-    <hr>
+    
   </div>
 
 
