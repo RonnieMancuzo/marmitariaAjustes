@@ -31,11 +31,13 @@ session_start();
 				<legend  class="w-auto">Bebida</legend>
 				<div class="form-group">
 					<label>Número da bebida:</label>
-					<input type="number" class="form-control" id="nro_bebida" name="nro_bebida" required autocomplete="off" style="width: 100px;">
+					<input type="number" min="1" class="form-control" id="nro_bebida" name="nro_bebida" required autocomplete="off" style="width: 100px;">
 					<label>Nome:</label>
 					<input type="text" class="form-control" id="nome_bebida" name="nome_bebida" placeholder="Digite o nome da bebida" required autocomplete="off">
 					<label>Descrição:</label>
 					<textarea class="form-control" id="descricao" name="descricao" placeholder="Digite as informações da bebida" rows="3"></textarea>
+					<label>Preço (R$):</label>
+					<input type="number" min="1" step="0.01" class="form-control" id="preco_bebida" name="preco_bebida" required autocomplete="off" style="width: 100px;">
 				</div>
 				<button type="submit" class="btn btn-primary" style="float:right;">Inserir</button>
 			</fieldset>

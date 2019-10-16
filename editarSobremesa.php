@@ -23,6 +23,7 @@ while ($row_sobremesa = mysqli_fetch_assoc($resultado_usuario)){
 
 
 </head>
+
 <body style="background-color: #d3222a; color: #ffc82d;">
 
 	<div class="container" id="tamanhoContainer" style="width: 500px; margin-top: 50px;">
@@ -49,6 +50,8 @@ while ($row_sobremesa = mysqli_fetch_assoc($resultado_usuario)){
 					<input type="text" class="form-control" id="nome_sobremesa" name="nome_sobremesa" value="<?php echo $row_sobremesa['nome_sobremesa']?>">
 					<label>Descrição:</label>
 					<input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo $row_sobremesa['descricao']?>">
+					<label>Preço (R$):</label>
+					<input type="number" min="1" step="0.01" class="form-control" id="preco_sobremesa" name="preco_sobremesa" value="<?php echo $row_sobremesa['preco_sobremesa']?>" style="width: 100px;">
 
 					<?php }?>	
 

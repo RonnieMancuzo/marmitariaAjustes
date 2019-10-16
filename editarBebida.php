@@ -44,11 +44,13 @@ while ($row_bebida = mysqli_fetch_assoc($resultado_usuario)){
 					<input type="hidden" name="id_bebida" value="<?php echo $row_bebida['id_bebida'];?>">
 
 					<label>Número da bebida:</label>
-					<input type="number" class="form-control" id="nro_bebida" name="nro_bebida" value="<?php echo $row_bebida['nro_bebida']?>" style="width: 100px;">
+					<input type="number" min="1" class="form-control" id="nro_bebida" name="nro_bebida" value="<?php echo $row_bebida['nro_bebida']?>" style="width: 100px;">
 					<label>Nome:</label>
 					<input type="text" class="form-control" id="nome_bebida" name="nome_bebida" value="<?php echo $row_bebida['nome_bebida']?>">
 					<label>Descrição:</label>
 					<input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo $row_bebida['descricao']?>">
+					<label>Preço (R$):</label>
+					<input type="number" step="0.01" min="0.01" class="form-control" id="preco_bebida" name="preco_bebida" required autocomplete="off" style="width: 100px;">
 
 					<?php }?>	
 

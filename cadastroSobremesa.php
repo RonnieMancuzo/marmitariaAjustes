@@ -36,6 +36,8 @@ session_start();
 					<input type="text" class="form-control" id="nome_sobremesa" name="nome_sobremesa" placeholder="Digite o nome da sobremesa" required autocomplete="off">
 					<label>Descrição:</label>
 					<textarea class="form-control" id="descricao" name="descricao" placeholder="Digite as informações da sobremesa" rows="3"></textarea>
+					<label>Preço (R$):</label>
+					<input type="number" min="1" step="0.01" class="form-control" id="preco_sobremesa" name="preco_sobremesa" required autocomplete="off" style="width: 100px;">
 				</div>
 				<button type="submit" class="btn btn-primary" style="float:right;">Inserir</button>
 			</fieldset>

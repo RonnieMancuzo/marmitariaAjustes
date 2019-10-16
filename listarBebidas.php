@@ -33,6 +33,7 @@ include_once("conexao.php");
           <th scope="col">Nro Bebida</th>
           <th scope="col">Nome da Bebida</th>
           <th scope="col">Descrição</th>
+          <th scope="col">Preço</th>
         </tr>
       </thead>
       <tr>
@@ -55,6 +56,7 @@ include_once("conexao.php");
             <td><?php echo $row_bebida['nro_bebida'];?></td>
             <td><?php echo $row_bebida['nome_bebida'];?></td>
             <td><?php echo $row_bebida['descricao'];?></td>
+            <td><?php echo $row_bebida['preco_bebida'];?></td>
             <td><a href="editarBebida.php?id_bebida=<?php echo $row_bebida['id_bebida'];?>" class="btn btn-warning" role="button">Editar</a></td>
             <td><a href="proc_excluirBebida.php?id_bebida=<?php echo $row_bebida['id_bebida'];?>" class="btn btn-warning" role="button">Excluir</a></td>
           </tr>
