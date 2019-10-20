@@ -1,27 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login Administrador</title>
+<?php
 
+require_once ('CLASSES/admins.php');
+$u = new Usuario;
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
 	<link rel="stylesheet" href="css/bootstrap.css"><!--para estilização responsiva Bootstrap-->
-	<!--fazer CSS próprio para o login.php => <link rel= "stylesheet" href="css/style.css">-->
+	<!--fazer CSS próprio para o cadastros.php => <link rel= "stylesheet" href="css/style.css">-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--para funcionalidades de botões e menu-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><!--para estilização online-->
 </head>
+
 <body style="background-color: #d3222a; color: #ffc82d;">
-	<div class="container" style="width: 500px; margin-top: 50px;">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">E-mail</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira o E-mail">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
-      </div>
-      <button type="submit" class="btn btn-dark"><a href="inicioAdmin.php">Entrar</button>
-      </form>
+    <div class="container" id="tamanhoContainer" style="width: 500px; margin-top: 50px;">
+    	<fieldset>
+    		<legend>Login Administrador</legend>
+            <form name="form" id="form" method="POST">
+            	
+            	<div class="form-group">
+            		<label>E-mail Administrador:</label>
+            		<input type="email" name="email_admin" id="email_admin" class="form-control" required>
+            	</div>
+            	<div class="form-group">
+            		<label>Senha</label>
+            		<input type="password" name="senha_admin" id="senha_admin" class="form-control" required>        
+              	</div>
+              	<div class="form-group">
+              		<input type="submit" name="entrar" value="Entrar">
+              	</div>
+
+            </form>
+        </fieldset>
+        <p>Ainda não é cadastrado? <strong><a href="cadastrarAdmin.php">Cadastre-se.</a></strong></p>
+
+        <hr>
+		<a href="index.php"><button type="submit" class="bt btn-primary">Voltar à tela incial.</button></a>
+		<hr>
+
     </div>
+    
+    <?php
+    if(isset($_POST['email_admin']))
+    {
+    	$email_admin = addslashes($_POST['email_admin']);
+		$senha_admin = addslashes($_POST['senha_admin']);
+		//verificar se está preenchido
+		if(!empty($email_admin) && !empty($senha_admin))
+		{
+			$u -> conectar("marmitaria", "localhost", "root", "");
+			if($u -> msgErro == ""){
+				if($u -> logar($email_admin, $senha_admin))
+				{
+					header("location: inicioAdmin.php");
+
+				}else{
+				echo "Email e/ou senha incorretos.";
+			}
+		}else{
+			echo "Erro: ".$u -> msgErro;
+		}
+
+		}else
+		{
+			echo "Preencha todos os campos.";
+		}
+	}
+
+		?>	
+
 </body>
 </html>

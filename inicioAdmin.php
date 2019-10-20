@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['id_admin']))
+{
+	header("location: login.php");
+	exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
