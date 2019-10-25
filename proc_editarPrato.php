@@ -4,6 +4,7 @@ session_start();
 
 include_once ("conexao.php");
 
+
 $id_prato = filter_input(INPUT_POST, 'id_prato', FILTER_SANITIZE_NUMBER_INT);
 $nro_prato = filter_input(INPUT_POST, 'nro_prato', FILTER_SANITIZE_NUMBER_INT);
 $nome_prato = filter_input(INPUT_POST, 'nome_prato', FILTER_SANITIZE_STRING);

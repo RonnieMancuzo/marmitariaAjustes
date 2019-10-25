@@ -8,6 +8,7 @@ $u = new Usuario;
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+	<title>Login Administrador</title>
 	<link rel="stylesheet" href="css/bootstrap.css"><!--para estilização responsiva Bootstrap-->
 	<!--fazer CSS próprio para o cadastros.php => <link rel= "stylesheet" href="css/style.css">-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
@@ -35,7 +36,7 @@ $u = new Usuario;
 
             </form>
         </fieldset>
-        <p>Ainda não é cadastrado? <strong><a href="cadastrarAdmin.php">Cadastre-se.</a></strong></p>
+        <p>Ainda não é cadastrado? <strong><a href="https://api.whatsapp.com/send?1=ptBR&phone=5514991220621">Solicite uma permissão.</a></strong></p>
 
         <hr>
 		<a href="index.php"><button type="submit" class="bt btn-primary">Voltar à tela incial.</button></a>

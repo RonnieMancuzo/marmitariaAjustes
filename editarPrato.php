@@ -43,6 +43,7 @@ while ($row_prato = mysqli_fetch_assoc($resultado_usuario)){
 					
 					<input type="hidden" name="id_prato" value="<?php echo $row_prato['id_prato'];?>">
 
+					
 					<label>Número do prato:</label>
 					<input type="number" class="form-control" id="nro_prato" name="nro_prato" value="<?php echo $row_prato['nro_prato']?>" style="width: 100px;">
 					<label>Nome:</label>
@@ -56,8 +57,6 @@ while ($row_prato = mysqli_fetch_assoc($resultado_usuario)){
 
 					<input type="submit" value="Confirmar" style="float:right;">
 
-				
-				
 				</div>
 				
 			</fieldset>

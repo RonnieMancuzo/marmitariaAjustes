@@ -4,6 +4,7 @@ session_start();
 
 include_once ("conexao.php");
 
+$dia_prato = filter_input(INPUT_POST, 'dia_prato', FILTER_SANITIZE_STRING);
 $nro_prato = filter_input(INPUT_POST, 'nro_prato', FILTER_SANITIZE_NUMBER_INT);
 $nome_prato = filter_input(INPUT_POST, 'nome_prato', FILTER_SANITIZE_STRING);
 $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
@@ -11,7 +12,7 @@ $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
 //echo "Nome: $nome <br>";
 //echo "E-mail: $email <br>";
 
-$result_usuarios = "INSERT INTO prato (nro_prato, nome_prato, descricao) VALUES ('$nro_prato', '$nome_prato', '$descricao')";
+$result_usuarios = "INSERT INTO prato (dia_prato, nro_prato, nome_prato, descricao) VALUES ('$dia_prato', $nro_prato', '$nome_prato', '$descricao')";
 
 $resultado_usuario = mysqli_query($conn, $result_usuarios);
 

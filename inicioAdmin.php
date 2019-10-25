@@ -24,9 +24,9 @@ if(!isset($_SESSION['id_admin']))
 		<h3>Bem vindo, usuário tal (a gente ainda vai saber seu nome..).</h3>
 		
 		<div class="menu-bar">
-			<ul>Pratos
-               	<li><a href="listarPratos.php">Editar Pratos</a></li>
-               	<li><a href="cadastroPrato.php">Inserir Novo Prato</a></li>
+			<ul>Gerenciar Semana
+               	<li><a href="listarPratos.php">Editar Pratos da Semana</a></li>
+               	<li><a href="cadastroPrato.php">Inserir Novo Dia e Prato</a></li>
 			</ul>
         </div>
         <div class="menu-bar">

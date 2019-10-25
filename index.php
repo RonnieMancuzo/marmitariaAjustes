@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+include_once("conexao.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,45 +84,130 @@
 
     <section class="cardapio">
     	<div class="container">
+
+            <?php
+
+            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'segunda'";
+            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
+
+            ?>
+
     		<ul class="list-unstyled">
     			<li class="media">
     				<img src="img/segundaFeira.jpg" class="mr-3" alt="...">
     				<div class="media-body">
-    					<h5 class="mt-0 mb-1">Segunda-feira</h5>
-    					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    					
+                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
+                        <?php echo $row_prato['nome_prato'];?>
+                        <br>
+                        <?php echo $row_prato['descricao'];?> 
+                        
     				</div>
   				</li>
-  				<li class="media">
-    				<img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-    				<div class="media-body">
-    					<h5 class="mt-0 mb-1">Terça-feira</h5>
-    					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    				</div>
-  				</li>
-  				<li class="media">
-    				<img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-    				<div class="media-body">
-    					<h5 class="mt-0 mb-1">Quarta-feira</h5>
-    					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    				</div>
-  				</li>
-  				<li class="media">
-    				<img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-    				<div class="media-body">
-    					<h5 class="mt-0 mb-1">Quinta-feira</h5>
-    					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    				</div>
-  				</li>
-  				<li class="media">
-    				<img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-    				<div class="media-body">
-    					<h5 class="mt-0 mb-1">Sexta-feira</h5>
-    					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    				</div>
-  				</li>
+            
 			</ul>
+            <?php
+
+            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'terca'";
+            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
+
+            ?>
+
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
+                    <div class="media-body">
+                        
+                        <h5 class="mt-0 mb-1">Terça</h5>
+                        <?php echo $row_prato['nome_prato'];?>
+                        <br>
+                        <?php echo $row_prato['descricao'];?> 
+                        
+                    </div>
+                </li>
+            
+            </ul>
+            
+            <?php
+
+            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'quarta'";
+            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
+
+            ?>
+
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
+                    <div class="media-body">
+                        
+                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
+                        <?php echo $row_prato['nome_prato'];?>
+                        <br>
+                        <?php echo $row_prato['descricao'];?> 
+                        
+                    </div>
+                </li>
+            
+            </ul>
+            
+            <?php
+
+            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'quinta'";
+            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
+
+            ?>
+
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
+                    <div class="media-body">
+                        
+                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
+                        <?php echo $row_prato['nome_prato'];?>
+                        <br>
+                        <?php echo $row_prato['descricao'];?> 
+                        
+                    </div>
+                </li>
+            
+            </ul>
+
+            <?php
+
+            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'sexta'";
+            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
+
+            ?>
+
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
+                    <div class="media-body">
+                        
+                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
+                        <?php echo $row_prato['nome_prato'];?>
+                        <br>
+                        <?php echo $row_prato['descricao'];?> 
+                        
+                    </div>
+                </li>
+            
+            </ul>
+            
 		</div>
 	</section>
+
+    <hr>
 
 <!--------------------------------Seção para escolha de tamanho(s)--------------------------->
 
@@ -255,6 +348,8 @@
             </div>  
         </div>
     </section>
+
+    <hr>
 
 
     <!-----------------------------feature-categories----------------------->

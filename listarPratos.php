@@ -23,13 +23,15 @@ include_once("conexao.php");
 
 
 <body style="background-color: #d3222a; color: #ffc82d;">
-	<div class="container" style="width: 500px; margin-top: 50px;">
+	<div class="container" style="width: 700px; margin-top: 50px;">
     <a href="inicioAdmin.php"><button type="submit" class="bt btn-primary"style="float:right;">Voltar</button></a>
 
 		<h3>Lista de Pratos</h3>
     <table class="table">
       <thead>
         <tr>
+
+          <th scope="col">Dia da Semana</th>
           <th scope="col">Nro Prato</th>
           <th scope="col">Nome do Prato</th>
           <th scope="col">Descrição</th>
@@ -43,24 +45,103 @@ include_once("conexao.php");
           unset($_SESSION['msg']);
         }
 
-        $result_usuarios = "SELECT * FROM prato";
+        $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'segunda'";
         $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 
-        while ($row_prato = mysqli_fetch_assoc($resultado_usuarios)){
-
+        $row_prato = mysqli_fetch_assoc($resultado_usuarios);
 
         ?>
 
           <tr>
+            <td><?php echo $row_prato['dia_prato'];?></td>
             <td><?php echo $row_prato['nro_prato'];?></td>
             <td><?php echo $row_prato['nome_prato'];?></td>
             <td><?php echo $row_prato['descricao'];?></td>
+            
             <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
             <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
           </tr>
+
+          <?php
+
+          $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'terca'";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+          $row_prato = mysqli_fetch_assoc($resultado_usuarios);
+
+          ?>
+
+          <tr>
+            <td><?php echo $row_prato['dia_prato'];?></td>
+            <td><?php echo $row_prato['nro_prato'];?></td>
+            <td><?php echo $row_prato['nome_prato'];?></td>
+            <td><?php echo $row_prato['descricao'];?></td>
+            
+            <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
+          </tr>
+
+          <?php
+
+          $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'quarta'";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+          $row_prato = mysqli_fetch_assoc($resultado_usuarios);
+
+          ?>
+
+          <tr>
+            <td><?php echo $row_prato['dia_prato'];?></td>
+            <td><?php echo $row_prato['nro_prato'];?></td>
+            <td><?php echo $row_prato['nome_prato'];?></td>
+            <td><?php echo $row_prato['descricao'];?></td>
+            
+            <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
+          </tr>
+
+          <?php
+
+          $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'quinta'";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+          $row_prato = mysqli_fetch_assoc($resultado_usuarios);
+
+          ?>
+
+          <tr>
+            <td><?php echo $row_prato['dia_prato'];?></td>
+            <td><?php echo $row_prato['nro_prato'];?></td>
+            <td><?php echo $row_prato['nome_prato'];?></td>
+            <td><?php echo $row_prato['descricao'];?></td>
+            
+            <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
+          </tr>
+
+          <?php
+
+          $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'sexta'";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+          $row_prato = mysqli_fetch_assoc($resultado_usuarios);
+
+          ?>
+
+          <tr>
+            <td><?php echo $row_prato['dia_prato'];?></td>
+            <td><?php echo $row_prato['nro_prato'];?></td>
+            <td><?php echo $row_prato['nome_prato'];?></td>
+            <td><?php echo $row_prato['descricao'];?></td>
+            
+            <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
+          </tr>
+
+
         </tr>
 
-      <?php } ?>
+      
       <hr>
     </table>
     <hr>
