@@ -11,6 +11,8 @@ include_once("conexao.php");
 <head>
 	<title>Marmitaria OPSIW</title>
 	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 	<link rel="stylesheet" href="css/bootstrap.css"><!--para estilização responsiva Bootstrap-->
 	<link rel= "stylesheet" href="css/styleIndex.css"><!--para estilização específica para o index código (cores, espaço entre botões, etc.)-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
@@ -34,7 +36,7 @@ include_once("conexao.php");
         <div class="menu-bar">
             <ul>
                 <li><a href="loginCliente.php"><i class="fa fa-sign-in"></i>Log In</a></li>
-                <li><a href="#"><i class="fa fa-pencil-square-o"></i>Cadastrar</a></li>
+                <li><a href="cadastrarCliente.php"><i class="fa fa-pencil-square-o"></i>Cadastrar</a></li>
                 <li><a href="login.php"><i class="fa fa-user-circle"></i>Administrador</a></li>
             </ul>
         </div>
@@ -85,124 +87,33 @@ include_once("conexao.php");
     <section class="cardapio">
     	<div class="container">
 
-            <?php
+            <?php 
 
-            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'segunda'";
+            $result_usuarios = "SELECT * FROM pratododia, dia, prato WHERE pratododia.id_dia = dia.id_dia AND pratododia.id_prato = prato.id_prato ORDER BY dia.id_dia";
             $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 
-            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
+            while ($row_pratododia = mysqli_fetch_assoc($resultado_usuarios)){
 
-            ?>
+                ?>
 
-    		<ul class="list-unstyled">
-    			<li class="media">
-    				<img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-    				<div class="media-body">
-    					
-                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
-                        <?php echo $row_prato['nome_prato'];?>
-                        <br>
-                        <?php echo $row_prato['descricao'];?> 
+
+                <ul class="list-unstyled">
+                    <li class="media">
+                        <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
+                        <div class="media-body">
+                            <b><?php echo $row_pratododia['nome_dia'];?></b>
+                            <br>
+                            <?php echo $row_pratododia['nome_prato'];?>
+                            <br>
+                            <?php echo $row_pratododia['descricao'];?> 
                         
-    				</div>
-  				</li>
+    				    </div>
+  				    </li>
+                </ul>
+
+            <?php } ?>
+
             
-			</ul>
-            <?php
-
-            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'terca'";
-            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
-
-            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
-
-            ?>
-
-            <ul class="list-unstyled">
-                <li class="media">
-                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-                    <div class="media-body">
-                        
-                        <h5 class="mt-0 mb-1">Terça</h5>
-                        <?php echo $row_prato['nome_prato'];?>
-                        <br>
-                        <?php echo $row_prato['descricao'];?> 
-                        
-                    </div>
-                </li>
-            
-            </ul>
-            
-            <?php
-
-            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'quarta'";
-            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
-
-            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
-
-            ?>
-
-            <ul class="list-unstyled">
-                <li class="media">
-                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-                    <div class="media-body">
-                        
-                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
-                        <?php echo $row_prato['nome_prato'];?>
-                        <br>
-                        <?php echo $row_prato['descricao'];?> 
-                        
-                    </div>
-                </li>
-            
-            </ul>
-            
-            <?php
-
-            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'quinta'";
-            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
-
-            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
-
-            ?>
-
-            <ul class="list-unstyled">
-                <li class="media">
-                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-                    <div class="media-body">
-                        
-                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
-                        <?php echo $row_prato['nome_prato'];?>
-                        <br>
-                        <?php echo $row_prato['descricao'];?> 
-                        
-                    </div>
-                </li>
-            
-            </ul>
-
-            <?php
-
-            $result_usuarios = "SELECT * FROM prato WHERE dia_prato = 'sexta'";
-            $resultado_usuarios = mysqli_query($conn, $result_usuarios);
-
-            $row_prato = mysqli_fetch_assoc($resultado_usuarios)
-
-            ?>
-
-            <ul class="list-unstyled">
-                <li class="media">
-                    <img src="img/segundaFeira.jpg" class="mr-3" alt="...">
-                    <div class="media-body">
-                        
-                        <h5 class="mt-0 mb-1"><?php echo $row_prato['dia_prato'];?></h5>
-                        <?php echo $row_prato['nome_prato'];?>
-                        <br>
-                        <?php echo $row_prato['descricao'];?> 
-                        
-                    </div>
-                </li>
-            
-            </ul>
             
 		</div>
 	</section>

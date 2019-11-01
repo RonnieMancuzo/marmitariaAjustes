@@ -30,10 +30,6 @@ session_start();
 			<fieldset class="border p-2">
 				<legend  class="w-auto">Prato</legend>
 				<div class="form-group">
-					<label>Dia da semana:</label>
-					<input type="text" class="form-control" id="dia_prato" name="dia_prato" placeholder="Dia" required autocomplete="off" style="width: 100px;">
-					<label>Número do prato:</label>
-					<input type="number" class="form-control" id="nro_prato" name="nro_prato" required autocomplete="off" style="width: 100px;">
 					<label>Nome:</label>
 					<input type="text" class="form-control" id="nome_prato" name="nome_prato" placeholder="Digite o nome do prato" required autocomplete="off">
 					<label>Descrição:</label>

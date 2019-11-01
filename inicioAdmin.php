@@ -7,6 +7,8 @@ if(!isset($_SESSION['id_admin']))
 	exit;
 }
 
+include_once ("conexao.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -20,13 +22,22 @@ if(!isset($_SESSION['id_admin']))
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><!--para estilização online-->
 </head>
 <body style="background-color: #d3222a; color: #ffc82d;">
+
+	<?php
+
+	$result_usuarios = "SELECT * FROM administrador";
+    $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+
+    $row_administrador = mysqli_fetch_assoc($resultado_usuarios)
+    ?>
+
 	<div class="container" style="width: 500px; margin-top: 50px;">
-		<h3>Bem vindo, usuário tal (a gente ainda vai saber seu nome..).</h3>
+		<h3>Bem vindo, <?php echo $row_administrador['nome_admin'];?>.</h3>
 		
 		<div class="menu-bar">
-			<ul>Gerenciar Semana
-               	<li><a href="listarPratos.php">Editar Pratos da Semana</a></li>
-               	<li><a href="cadastroPrato.php">Inserir Novo Dia e Prato</a></li>
+			<ul>Pratos
+               	<li><a href="listarPratos.php">Editar Pratos</a></li>
+               	<li><a href="cadastroPrato.php">Inserir Prato</a></li>
 			</ul>
         </div>
         <div class="menu-bar">
@@ -41,8 +52,14 @@ if(!isset($_SESSION['id_admin']))
                	<li><a href="cadastroSobremesa.php">Inserir Nova Sobremesa</a></li>
 	        </ul>
         </div>
+        <div class="menu-bar">
+			<ul>Dias
+               	<li><a href="listarDia.php">Editar Dias</a></li>
+               	<li><a href="cadastroDia.php">Inserir Novo Dia</a></li>
+	        </ul>
+        </div>
         <div class=container>
-        	<button type="submit" class="btn btn-dark"><a href="atualizarSemana.php">Atualizar Cardápio da Semana</button>
+        	<button type="submit" class="btn btn-dark"><a href="cadastroPratoDoDia.php">Atualizar Cardápio da Semana</button>
         </div>
 		<hr>
 		<a href="index.php"><button type="submit" class="bt btn-primary">Voltar à tela principal</button></a>

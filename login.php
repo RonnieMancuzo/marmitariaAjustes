@@ -36,7 +36,7 @@ $u = new Usuario;
 
             </form>
         </fieldset>
-        <p>Ainda não é cadastrado? <strong><a href="https://api.whatsapp.com/send?1=ptBR&phone=5514991220621">Solicite uma permissão.</a></strong></p>
+        <p>Ainda não é cadastrado? <strong><a href="https://api.whatsapp.com/send?1=ptBR&phone=5514991220621" target="_blank">Solicite uma permissão.</a></strong></p>
 
         <hr>
 		<a href="index.php"><button type="submit" class="bt btn-primary">Voltar à tela incial.</button></a>

@@ -3,18 +3,18 @@ session_start();
 
 include_once("conexao.php");
 
-$id_prato = filter_input(INPUT_GET, 'id_prato', FILTER_SANITIZE_NUMBER_INT);
-$result_usuario = "SELECT * FROM prato WHERE id_prato = $id_prato";
+$id_dia = filter_input(INPUT_GET, 'id_dia', FILTER_SANITIZE_NUMBER_INT);
+$result_usuario = "SELECT * FROM dia WHERE id_dia = $id_dia";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
-while ($row_prato = mysqli_fetch_assoc($resultado_usuario)){
+while ($row_dia = mysqli_fetch_assoc($resultado_usuario)){
 
 	
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Editar Prato</title>
+	<title>Editar Dia</title>
 	<link rel="stylesheet" href="css/bootstrap.css"><!--para estilização responsiva Bootstrap-->
 	<!--fazer CSS próprio para o cadastros.php => <link rel= "stylesheet" href="css/style.css">-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
@@ -23,6 +23,7 @@ while ($row_prato = mysqli_fetch_assoc($resultado_usuario)){
 
 
 </head>
+
 <body style="background-color: #d3222a; color: #ffc82d;">
 
 	<div class="container" id="tamanhoContainer" style="width: 500px; margin-top: 50px;">
@@ -36,18 +37,16 @@ while ($row_prato = mysqli_fetch_assoc($resultado_usuario)){
 		}
 
 		?>
-		<form action="proc_editarPrato.php" method="POST">
+		<form action="proc_editarDia.php" method="POST">
 			<fieldset class="border p-2">
-				<legend  class="w-auto">Prato</legend>
+				<legend  class="w-auto">Dia</legend>
 				<div class="form-group">
 					
-					<input type="hidden" name="id_prato" value="<?php echo $row_prato['id_prato'];?>">
+					<input type="hidden" name="id_dia" value="<?php echo $row_dia['id_dia'];?>">
 
 					<label>Nome:</label>
-					<input type="text" class="form-control" id="nome_prato" name="nome_prato" value="<?php echo $row_prato['nome_prato']?>">
-					<label>Descrição:</label>
-					<input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo $row_prato['descricao']?>">
-
+					<input type="text" class="form-control" id="nome_dia" name="nome_dia" value="<?php echo $row_dia['nome_dia']?>">
+					
 					<?php }?>	
 
 					<hr>

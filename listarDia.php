@@ -10,30 +10,26 @@ include_once("conexao.php");
 
 <html>
 <head>
-	<title>Lista de Pratos</title>
+	<title>Lista de Dias</title>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--para ícones customizados-->
   <link rel="stylesheet" href="css/styleIndex.css">
-
-
 	
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--para funcionalidades de botões e menu-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><!--para estilização online-->
 </head>
 
-
 <body style="background-color: #d3222a; color: #ffc82d;">
-	<div class="container" style="width: 700px; margin-top: 50px;">
+	<div class="container" style="width: 500px; margin-top: 50px;">
     <a href="inicioAdmin.php"><button type="submit" class="bt btn-primary"style="float:right;">Voltar</button></a>
 
-		<h3>Lista de Pratos</h3>
+		<h3>Lista de Dias</h3>
     <table class="table">
       <thead>
         <tr>
-
-          <th scope="col">Código do Prato</th>
-          <th scope="col">Nome do Prato</th>
-          <th scope="col">Descrição</th>
+          <th scope="col">Código</th>
+          <th scope="col">Nome do Dia</th>
         </tr>
       </thead>
       <tr>
@@ -44,29 +40,23 @@ include_once("conexao.php");
           unset($_SESSION['msg']);
         }
 
-        $result_usuarios = "SELECT * FROM prato";
+        $result_usuarios = "SELECT * FROM dia";
         $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 
-        while ($row_prato = mysqli_fetch_assoc($resultado_usuarios)){
+        while ($row_dia = mysqli_fetch_assoc($resultado_usuarios)){
+
 
         ?>
 
           <tr>
-            <td><?php echo $row_prato['id_prato'];?></td>
-            <td><?php echo $row_prato['nome_prato'];?></td>
-            <td><?php echo $row_prato['descricao'];?></td>
-            
-            <td><a href="editarPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Editar</a></td>
-            <td><a href="proc_excluirPrato.php?id_prato=<?php echo $row_prato['id_prato'];?>" class="btn btn-warning" role="button">Excluir</a></td>
+            <td><?php echo $row_dia['id_dia'];?></td>
+            <td><?php echo $row_dia['nome_dia'];?></td>
+            <td><a href="editarDia.php?id_dia=<?php echo $row_dia['id_dia'];?>" class="btn btn-warning" role="button">Editar</a></td>
+            <td><a href="proc_excluirDia.php?id_dia=<?php echo $row_dia['id_dia'];?>" class="btn btn-warning" role="button">Excluir</a></td>
           </tr>
-
-        <?php } ?>
-
-          
-
         </tr>
 
-      
+      <?php } ?>
       <hr>
     </table>
     <hr>

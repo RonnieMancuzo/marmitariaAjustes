@@ -17,28 +17,100 @@ $u = new Usuario;// instanciando classe Usuario de clientes.php
 </head>
 
 <body style="background-color: #d3222a; color: #ffc82d;">
-    <div class="container" id="tamanhoContainer" style="width: 500px; margin-top: 50px;">
+    <div class="container" id="tamanhoContainer" style="width: 700px; margin-top: 50px;">
     	<fieldset>
     		<legend>Cadastrar Cliente</legend>
+
     		<form name="form" id="form" method="POST">
-    			<div class="form-group">
-    				<label>Nome</label>
-    				<input type="text" name="nome_cliente" id="nome_cliente" class="form-control"placeholder="Nome Completo" maxlength="100">
+    			<div class="form-row">
+    				<div class="col-md-6 mb-3">
+    					<label for="nome_cliente">Nome</label>
+    					<input type="text" name="nome_cliente" id="nome_cliente" class="form-control"placeholder="Nome Completo" maxlength="100">
+    				</div>
+    				<div class="col-md-6 mb-3">
+    					<label for="email_cliente">E-mail</label>
+    					<input type="email" name="email_cliente" id="email_cliente" class="form-control" placeholder="Usuário (e-mail)" maxlength="40">
+    				</div>
     			</div>
-    			<div class="form-group">
-    				<label>E-mail</label>
-    				<input type="email" name="email_cliente" id="email_cliente" class="form-control" placeholder="Usuário (e-mail)" maxlength="40">
+    			<div class="form-row">
+    				<div class="col-md-6 mb-3">
+    					<label for="endereco">Endereço</label>
+    					<input type="text" name="endereco" id="endereco" class="form-control"placeholder="Logradouro" maxlength="70">
+    				</div>
+    				<div class="col-md-2 mb-3">
+    					<label for="numero">Nº</label>
+    					<input type="text" name="numero" id="numero" class="form-control" maxlength="7">
+    				</div>
+    				<div class="col-md-4 mb-3">
+    					<label for="complemento">Complemento</label>
+    					<input type="text" name="complemento" id="complemento" class="form-control" maxlength="15">
+    				</div>
     			</div>
-    			<div class="form-group">
-            		<label>Senha</label>
-            		<input type="password" name="senha_cliente" id="senha_cliente" class="form-control" placeholder="Senha">        
-              	</div>
-              	<div class="form-group">
-    				<label>Confirmar Senha</label>
-    				<input type="" name="confSenha" id="confSenha" class="form-control"placeholder="Confirmar Senha" maxlength="30" required>
+    			<div class="form-row">
+    				<div class="col-md-4 mb-3">
+    					<label for="bairro">Bairro</label>
+    					<input type="text" name="bairro" id="bairro" class="form-control"placeholder="Bairro" maxlength="50">
+    				</div>
+    				<div class="col-md-4 mb-3">
+    					<label for="cep">CEP</label>
+    					<input type="text" name="cep" id="cep" placeholder="CEP" class="form-control" maxlength="10">
+    				</div>
+    				<div class="col-md-3 mb-3">
+    					<label for="cidade">Cidade</label>
+    					<input type="text" name="cidade" id="cidade" placeholder="Cidade" class="form-control" maxlength="20">
+    				</div>
+    				<div class="col-md-1 mb-3">
+    					<label for="uf">UF</label>
+    					<input type="text" name="uf" id="uf" class="form-control" maxlength="2">
+    				</div>
     			</div>
 
-    			<input type="submit" name="" value="Cadastrar">
+    			<hr>
+
+    			<legend>Endereço de Entrega</legend>
+
+    			<div class="form-row">
+    				<div class="col-md-6 mb-3">
+    					<label for="end_entrega">Endereço</label>
+    					<input type="text" name="end_entrega" id="end_entrega" class="form-control"placeholder="Logradouro" maxlength="70">
+    				</div>
+    				<div class="col-md-2 mb-3">
+    					<label for="num_entrega">Nº</label>
+    					<input type="text" name="num_entrega" id="num_entrega" class="form-control" maxlength="7">
+    				</div>
+    				<div class="col-md-4 mb-3">
+    					<label for="comp_entrega">Complemento</label>
+    					<input type="text" name="comp_entrega" id="comp_entrega" class="form-control" maxlength="15">
+    				</div>
+    			</div>
+    			<div class="form-row">
+    				<div class="col-md-4 mb-3">
+    					<label for="bairro_entrega">Bairro</label>
+    					<input type="text" name="bairro_entrega" id="bairro_entrega" class="form-control"placeholder="Bairro" maxlength="50">
+    				</div>
+    				<div class="col-md-4 mb-3">
+    					<label for="cep_entrega">CEP</label>
+    					<input type="text" name="cep_entrega" id="cep_entrega" placeholder="CEP" class="form-control" maxlength="10">
+    				</div>
+    				<div class="col-md-3 mb-3">
+    					<label for="cidade_entrega">Cidade</label>
+    					<input type="text" name="cidade_entrega" id="cidade_entrega" placeholder="Cidade" class="form-control" maxlength="20">
+    				</div>
+    				<div class="col-md-1 mb-3">
+    					<label for="uf_entrega">UF</label>
+    					<input type="text" name="uf_entrega" id="uf_entrega" class="form-control" maxlength="2">
+    				</div>
+    			</div>
+
+    			<div class="form-group">
+            		<label>Senha</label>
+            		<input type="password" name="senha_cliente" id="senha_cliente" class="form-control" placeholder="Senha" style="width: 100px;">        
+              	
+    				<label>Confirmar Senha</label>
+    				<input type="password" name="confSenha" id="confSenha" class="form-control"placeholder="Confirmar Senha" style="width: 100px;">
+    			</div>
+
+    			<input type="submit" name="" value="Cadastrar" style="float: right;">
     		</form>
     	</fieldset>
 
@@ -54,17 +126,34 @@ $u = new Usuario;// instanciando classe Usuario de clientes.php
 	{
 		$nome_cliente = addslashes($_POST['nome_cliente']);
 		$email_cliente = addslashes($_POST['email_cliente']);
+		$endereco = addslashes($_POST['endereco']);
+		$numero = addslashes($_POST['numero']);
+		$complemento = addslashes($_POST['complemento']);
+		$bairro = addslashes($_POST['bairro']);
+		$cep = addslashes($_POST['cep']);
+		$cidade = addslashes($_POST['cidade']);
+		$uf = addslashes($_POST['uf']);
+
+		$end_entrega = addslashes($_POST['end_entrega']);
+		$num_entrega = addslashes($_POST['num_entrega']);
+		$comp_entrega = addslashes($_POST['comp_entrega']);
+		$bairro_entrega = addslashes($_POST['bairro_entrega']);
+		$cidade_entrega = addslashes($_POST['cidade_entrega']);$
+		$uf_entrega = addslashes($_POST['uf_entrega']);
+
+
 		$senha_cliente = addslashes($_POST['senha_cliente']);
 		$confSenha = addslashes($_POST['confSenha']);
+
 		//verificar se está preenchido
-		if(!empty($nome_cliente) && !empty($email_cliente) && !empty($senha_cliente) && !empty($confSenha))
+		if(!empty($nome_cliente) && !empty($email_cliente) && !empty($endereco) && !empty($numero) && !empty($complemento) && !empty($bairro) && !empty($cep) && !empty($cidade) && !empty($uf) && !empty($end_entrega) && !empty($num_entrega) && !empty($comp_entrega) && !empty($bairro_entrega) && $cep_entrega && !empty($cidade_entrega) && !empty($uf_entrega) && !empty($senha_cliente) && !empty($confSenha))
 		{
 			$u -> conectar("marmitaria", "localhost", "root", "");
 			if($u -> msgErro == "")
 			{
 				if($senha_cliente == $confSenha)
 				{
-					if($u -> cadastrar($nome_cliente, $email_cliente, $senha_cliente))
+					if($u -> cadastrar($nome_cliente, $email_cliente, $endereco, $numero, $complemento, $bairro, $cep, $cidade, $uf, $end_entrega, $num_entrega, $complemento, $bairro_entrega, $cep_entrega, $cidade_entrega, $uf_entrega, $senha_cliente))
 						{
 							echo "Cadastrado com sucesso.";
 
