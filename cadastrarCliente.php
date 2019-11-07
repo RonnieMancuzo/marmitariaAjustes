@@ -34,6 +34,16 @@ $u = new Usuario;// instanciando classe Usuario de clientes.php
     			</div>
     			<div class="form-row">
     				<div class="col-md-6 mb-3">
+    					<label for="cpf_cliente">CPF</label>
+    					<input type="text" name="cpf_cliente" id="cpf_cliente" class="form-control"placeholder="CPF" maxlength="11">
+    				</div>
+    				<div class="col-md-6 mb-3">
+    					<label for="telefone_cliente">Telefone</label>
+    					<input type="text" name="telefone_cliente" id="telefone_cliente" class="form-control" placeholder="Usuário (telefone)" maxlength="15">
+    				</div>
+    			</div>
+    			<div class="form-row">
+    				<div class="col-md-6 mb-3">
     					<label for="endereco">Endereço</label>
     					<input type="text" name="endereco" id="endereco" class="form-control"placeholder="Logradouro" maxlength="70">
     				</div>

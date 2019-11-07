@@ -52,12 +52,16 @@ include_once("conexao.php");
                 <li><a href="#sobremesa"><i class="fa fa-spoon"></i>Sobremesa</a></li>
             </ul>
         </div>
-        
+
 <!------------------------Carousel---------------------------------------->
 
-		<div class="slider">
+
+		<div class="row">
+            <div class="col-md-10 mb-3">
+            
+            <div class="slider">
             <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
-            	<div class="carousel-inner">
+            	<div class="carousel-inner" style="width: 500px;">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="img/carousel_01.jpg" alt="First slide">
                     </div>
@@ -79,13 +83,30 @@ include_once("conexao.php");
                 </ol>
             </div>
         </div>
+    </div>
+    <div class="col-md-2 mb-3">
+                    <img src="img/logoOpsiw.png" style="width: 300px; opacity: 0.7; border: 10px solid rgba(255,255,255,0.5); padding: 10px; float: right;border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px; border-color: #ffc82d;
+">
+                    <h3>Marmitaria <b>Opsiw!</b><br>O melhor do seu dia!</h3>
+        </div>
+    </div>
+
+
     </section>
+
+
     <hr>
+
+
 
 <!------------------------------Cardapios------------------------------>
 
     <section class="cardapio">
     	<div class="container">
+            <div class="tittle-box">
+                <h2>Cardápio da Semana<i class="fa fa-cutlery"></i></h2>
+            </div>
 
             <?php 
 
@@ -278,8 +299,14 @@ include_once("conexao.php");
                     <img src="img/sobremesaDimensionada.jpg">
                 </div>
             </div>
+            <hr>
+            <h4>Horário de funcionamento (pedidos e entregas):</h4>
+            <h5>Segunda a sexta, das 11 às 15 horas.</h5>
         </div>
+
     </section>
+
+<!-----------------------------------Footer------------------------>
 
     <footer class="footer" style="background-color: #ffc82d;">
         <div class="container">
@@ -300,8 +327,8 @@ include_once("conexao.php");
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
+                            Entre em contato conosco: <a href="#">
+                                <i class="fab fa-linkedin-in"></i>opsiw.com.br
                             </a>
                         </li>
                     </ul>

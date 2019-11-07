@@ -60,7 +60,11 @@ include_once ("conexao.php");
         </div>
         <div class=container>
         	<button type="submit" class="btn btn-dark"><a href="cadastroPratoDoDia.php">Atualizar Cardápio da Semana</button>
+        </div><br>
+        <div class=container>
+        	<button type="submit" class="btn btn-dark"><a href="#">Relatórios</button>
         </div>
+
 		<hr>
 		<a href="index.php"><button type="submit" class="bt btn-primary">Voltar à tela principal</button></a>
 		<hr>
